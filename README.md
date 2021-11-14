@@ -132,3 +132,82 @@ Y por otro lado tenemos la parte visual, la **estadística descriptiva**, tenemo
 ### Diagramas de dispersión en el análisis de datos
 
 El diagrama de dispersión o scatterplot nos muestra la visualización entre 2 variables, para saber si estas están positivamente o negativamente correlacioandas, o puede que no lo estén.
+
+## Estadística de la ingesta de datos
+
+### Pipelines de procesamiento para variables numéricas
+
+Escalamiento lineal
+
+[PDF de La técnica de escalamiento lineal por intervalos: una propuesta de estandarización aplicada a la medición de niveles de bienestar social](https://www.upo.es/revistas/index.php/RevMetCuant/article/view/2691/2147)
+
+¿Por qué usarlo? -> Porque los modelos de machine learning son eficientes en el rango [-1, 1].
+
+¿Hay diferentes tipos? -> maxmin, Clipping, Z-score, Winsorizing, más información en la [Documentación de Normalization de Google Developers](https://developers.google.com/machine-learning/data-prep/transform/normalization?hl=id)
+
+¿Cuándo usarlos? -> cuando tenemos data simétrica o uniformemente distribuida
+
+Fórmula usando el escalamiento de min-max -> Tenemos X y debemos llegar a Xs, entonces: Xs = (2X - min - max) / (max- min)
+
+> Un escalamiento lineal es una función lineal que simplemente transforma unos números en otros
+
+### Transformación no lineal
+
+Para recordar, los métodos de *escalamientos lineales* se suelen usar con datós que están distribuidos de forma simétrica.
+
+¿Qué hacer si los datos no están distribudos de forma simétrica?
+
+1. Tomo un problema que no sé cómo resolver (datos sesgados no uniformes)
+2. Lo transformo en un problema que ya sé cómo resolver (les aplico la función lineal para uniformarlos)
+
+Transformación no lineal
+
+¿Por qué usarlos? -> Datos fuertemente sesgados, no simétricos
+
+¿Hay diferentes tipos? -> Logarítmicos, sigmoides, polinomiales (grado 2 para arriba), etc
+
+¿Cuándo usarlos? -> ¡Antes de escalamientos lineales!
+
+Esto al final del día viene muy de la mano con la [Geometría Análítica](https://www.youtube.com/playlist?list=PL9SnRnlzoyX2ksvCQ2e3_uIB5SxhnpbyF) y también estamos hablando del [Escalado](https://es.wikipedia.org/wiki/Escalado_(geometr%C3%ADa))
+
+### Procesamiento de datos numéricos en Python
+
+Para recordar:
+
+- [Numpy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [Scikit-learn](https://scikit-learn.org/stable/)
+- [Seaborn](https://seaborn.pydata.org/)
+
+### Pipelines de procesamiento para variables categóricas
+
+Cuando se tiene variables categóricas se hace un mapeo numérico. Para eso hay 2 métodos, de manera que sean fácilmente interpretables en modelos de machine learning:
+
+- Dummy
+	- Representación compacta
+	- Mejor inputs linealmente independientes
+- One-hot
+	- Permite describir categorías no incluidas inicialmente
+
+Ambos siguen la cateroría de que tienes que mapear numéricamente las categorías.
+
+### Procesamiento para variables categóricas con Python
+
+¿Podemos tratar a las variables numéricas como categóricas? Claro que sí. Todo depende del contexto y del proyecto.
+
+En el mundo de ciencia de datos, es muy común usar el modo 'one-hot', puesto que 'dummy' ni siquiera existe en las librerías de Python.
+
+La desventaja del one-hot es que cada elemento de los vectores que resultan es como si fueran nuevas variables. Esto aumenta demasiado la dimensionalidad de nuestro dataset y se vea afectado en el rendimiento.
+
+[One Hot Encoding](https://interactivechaos.com/es/manual/tutorial-de-machine-learning/one-hot-encoding)
+
+### Correlaciones
+
+[Coeficiente de correlación en Youtube](https://www.youtube.com/watch?v=aKsjilxc5ww)
+
+[Desigualdad de Cauchy-Bunyakovsky-Schwarz](https://es.wikipedia.org/wiki/Desigualdad_de_Cauchy-Bunyakovsky-Schwarz)
+
+### Matriz de covarianza
+
+La matriz de covarianza es muy importante para hacer un análisis exploratorio de datos y ver qué tan correlacionadas están las distintas variables que tenemos (porque seguramente no van a ser solamente 2).
