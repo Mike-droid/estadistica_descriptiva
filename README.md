@@ -211,3 +211,19 @@ La desventaja del one-hot es que cada elemento de los vectores que resultan es c
 ### Matriz de covarianza
 
 La matriz de covarianza es muy importante para hacer un análisis exploratorio de datos y ver qué tan correlacionadas están las distintas variables que tenemos (porque seguramente no van a ser solamente 2).
+
+## Proyecto de aplicación
+
+### Cálculo de valores propios de una matriz
+
+[Artículo en Platzi](https://platzi.com/clases/2353-estadistica-descriptiva/39056-calculo-de-valores-propios-de-una-matriz/)
+
+### PCA: análisis de componentes principales
+
+[StatQuest: Principal Component Analysis (PCA), Step by step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
+
+### Reducción de dimensionalidad con PCA
+
+[Link para el proyecto en DeepNote](https://deepnote.com/project/curso-estadistica-descriptiva-2021-Duplicate-S8kixU3FS0ydDgs7SH6ZZg/%2Fplatzi-curso-estadistica-descriptiva-2021%2F%5Bclase-22%5DPCA.ipynb)
+
+[Apuntes del curso desde DeepNote](https://deepnote.com/@anthonymanotoa/Apuntes-de-Estadistica-Descriptiva-z6iCtsB_Q_6ZARwuRxzhIA)
